@@ -45,7 +45,7 @@ jobs:
       # if: matrix.os == 'ubuntu-latest' || (github.ref != 'refs/heads/test/test-compiler-warning' && github.base_ref != 'test/test-compiler-warning')
       shell: bash
       run: |
-        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}} 2>&1 | tee build.log
+        cmake --build "$GITHUB_WORKSPACE/build" --config ${{matrix.build_type}} 2>&1 | tee build.log
         grep -E "warning:|warning C" build.log > warnings_list.txt || true
 
     - name: Compiler warning summary
