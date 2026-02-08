@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
   push:
-    branches: [ "main", "test/test-compiler-warning" ]
+    branches: [ "main", "test/test-compiler-warning" ] 
   pull_request:
     branches: [ "main", "test/test-compiler-warning" ]
 
